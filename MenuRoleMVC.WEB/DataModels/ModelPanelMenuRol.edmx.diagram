@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c4aefb3a00474ac2a3b90d8beac48e42" Name="Diagram1">
+        <EntityTypeShape EntityType="PanelMenuRolModel.tblMainMenu" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PanelMenuRolModel.tblPerfil" Width="1.5" PointX="1" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PanelMenuRolModel.tblSubMenu" Width="1.5" PointX="5.875" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PanelMenuRolModel.tblUsuario" Width="1.5" PointX="5.375" PointY="4.375" IsExpanded="true" />
+        <AssociationConnector Association="PanelMenuRolModel.FK_tblSubMenu_tblMain" ManuallyRouted="false" />
+        <AssociationConnector Association="PanelMenuRolModel.FK_tblSubMenu_tblPerfil" ManuallyRouted="false" />
+        <AssociationConnector Association="PanelMenuRolModel.FK_tblUsuario_tblPerfil" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
