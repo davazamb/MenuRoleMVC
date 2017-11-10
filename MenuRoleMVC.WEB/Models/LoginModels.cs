@@ -14,7 +14,7 @@ namespace MenuRoleMVC.WEB.Models
         [Required(ErrorMessage = "Por favor ingrese Password")]
         [DataType(DataType.Password)]
         public string Password { get; set; }
-        public int? UserRoleId { get; set; }
-        public string RoleName { get; set; }
+        public int? UsarioPerfilId { get; set; }
+        public string PerfilNombre { get; set; }
     }
 }
