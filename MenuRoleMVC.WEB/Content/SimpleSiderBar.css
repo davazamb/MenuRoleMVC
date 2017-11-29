@@ -1,0 +1,106 @@
+﻿/*!
+ * Start Bootstrap - Simple Sidebar HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+
+/* Toggle Styles */
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+    #wrapper.toggled {
+        padding-left: 250px;
+    }
+/*sirve para scroll si hay mayor numero de item en el menu*/
+.sidebar-scroll {
+    /*position: fixed;*/
+    overflow-y: scroll;
+    height: 100%;
+    width: 200px;
+    z-index: 100;
+}
+
+@-moz-document url-prefix() {
+    .sidebar-scroll {
+        width: 0px;
+        height: 0px;
+    }
+}
+
+/*fin*/
+.hackbottommenu {
+    height: 220px;
+    /*background-color:#DB1417;*/
+}
+
+#sidebar-wrapper {
+    top: 50px;
+    z-index: 100;
+    position: fixed;
+    left: 200px;
+    width: 0;
+    height: 100%;
+    margin-left: -200px;
+    overflow-y: auto;
+    background: #f6f6f6; /*#008BCC;*/
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    -webkit-box-shadow: 4px 1px 2px 0px rgba(0,0,0,0.19);
+    -moz-box-shadow: 4px 1px 2px 0px rgba(0,0,0,0.19);
+    box-shadow: 4px 1px 2px 0px rgba(0,0,0,0.19);
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 200px;
+}
+
+#page-content-wrapper {
+    width: 98.8%;
+    position: absolute;
+    padding: 5px; /*15 margen contenedor minimizado full*/
+    padding-bottom: 150px; /*15 margen abajo minimizado */
+}
+
+#wrapper.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -200px;
+}
+
+
+@media(min-width:768px) {
+
+
+    #wrapper {
+        padding-left: 200px;
+    }
+
+        #wrapper.toggled {
+            padding-left: 0;
+        }
+
+    #sidebar-wrapper {
+        width: 200px;
+    }
+
+    #wrapper.toggled #sidebar-wrapper {
+        width: 0;
+    }
+
+    #page-content-wrapper {
+        padding: 0px; /*margen contenedor full*/
+        position: relative;
+    }
+
+    #wrapper.toggled #page-content-wrapper {
+        position: relative;
+        margin-right: 0;
+    }
+}

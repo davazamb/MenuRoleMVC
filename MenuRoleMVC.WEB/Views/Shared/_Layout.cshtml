@@ -7,10 +7,71 @@
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/SimpleSiderBar.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="body">
-        @RenderSection("featured", required: false)
+    <!--Inicio header menu-->
+    <div class="clearfix">
+        <div class="header-bar navbar-fixed-top">
+            <a href="#menu-toggle" class="box-menu" id="menu-toggle"><span class="ToolTip" data-placement="right" data-original-title="Men&uacute;"><i class="fa fa-bars"></i></span></a> <span class="logo-app"><img src="~/Content/images/logo-app.png" width="168" height="45" alt="" /></span>
+        </div>
+    </div>
+    <!--Termino header menu-->
+
+    <div id="wrapper">
+        <!--Inicio side bar-->
+        <div class="sidebar-scroll">
+            <div id="sidebar-wrapper">
+                <div class="logo-empresa"><img src="~/Content/images/logo-empresa.jpg" width="97" height="108" alt="" /></div>
+                <!--INICIO NUEVO DATOS USUARIO-->
+                @*<div class="row">
+                    <div class="col-md-12 text-center" style="margin-bottom:10px; clear:both;">
+                        <p class="usuario-sesion text-center"><span class="glyphicons glyphicons-user"></span> @(Session["NombreUsuario"] != null && Session["NombreUsuario"] != "" ? Session["NombreUsuario"].ToString() : Session["Usuario"])</p>
+                        <button type="submit" class="btn btn-sm btn-sesion" onclick="location.href = '@Url.Action("Logout","Home")'"><i class="fa fa-power-off"></i> Cerrar Sesi&oacute;n</button>
+                    </div>
+                </div>*@
+                <!--TERMINO NUEVO DATOS USUARIO-->
+                <!--Inicio Menu-->
+                @Html.Partial("_MenuPartial")
+                <!--Termino Menu-->
+            </div>
+        </div>
+        <!--Termino side bar-->
+        <!-- Inicio contenido -->
+        <div id="page-content-wrapper">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="titulo-seccion">
+                            @ViewBag.TituloSeccion
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    @RenderBody()
+
+                    <hr />
+                    <footer>
+                        <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+                    </footer>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Termino contenido -->
+
+    </div>
+
+
+
+
+    @*<nav>
+        
+    </nav>*@
+    @*<div id="body">
+        @RenderSection("featured", required: false)*@
         @*<div class="container">
                 @RenderBody();
             </div>*@
@@ -35,14 +96,11 @@
                     </div>
                 </div>
             </div>*@
-        <div class="container body-content">
+        @*<div class="container">
             @RenderBody()
-            <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
-            </footer>
+
         </div>
-    </div>
+    </div>*@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

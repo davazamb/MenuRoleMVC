@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace MenuRoleMVC.WEB.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
@@ -20,6 +21,8 @@ namespace MenuRoleMVC.WEB.Controllers
             return View();
         }
 
+
+        
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

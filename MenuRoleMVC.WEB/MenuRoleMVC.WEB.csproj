@@ -56,6 +56,9 @@
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.7\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MvcAuthorization, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvcAuthorization.2.1.0\lib\net40\MvcAuthorization.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -111,6 +114,9 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -148,10 +154,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\CustomAuthorizeAttribute.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\MvcAuthorization.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\MainMenusController.cs" />
+    <Compile Include="Controllers\PerfilesController.cs" />
+    <Compile Include="Controllers\SubMenusController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="DataModels\ModelPanelMenuRol.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -182,6 +194,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ActionAuthorizationConfigurationCollection.cs" />
+    <Compile Include="Models\ActionAuthorizationConfigurationElement.cs" />
+    <Compile Include="Models\ActionAuthorizeAttribute.cs" />
+    <Compile Include="Models\AuthorizationConfiguration.cs" />
+    <Compile Include="Models\ControllerAuthorizationConfigurationCollection.cs" />
+    <Compile Include="Models\ControllerAuthorizationConfigurationElement.cs" />
+    <Compile Include="Models\ControllerAuthorizeAttribute.cs" />
     <Compile Include="Models\LoginModels.cs" />
     <Compile Include="Models\MenuModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -189,6 +208,9 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Preubas.css" />
+    <Content Include="Content\SimpleSiderBar.css" />
+    <Content Include="Content\Site2.css" />
     <Content Include="DataModels\ModelPanelMenuRol.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelPanelMenuRol.edmx</DependentUpon>
@@ -224,7 +246,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -239,6 +263,27 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Shared\_MenuPartial.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Perfiles\Create.cshtml" />
+    <Content Include="Views\Perfiles\Delete.cshtml" />
+    <Content Include="Views\Perfiles\Details.cshtml" />
+    <Content Include="Views\Perfiles\Edit.cshtml" />
+    <Content Include="Views\Perfiles\Index.cshtml" />
+    <Content Include="Views\MainMenus\Create.cshtml" />
+    <Content Include="Views\MainMenus\Delete.cshtml" />
+    <Content Include="Views\MainMenus\Details.cshtml" />
+    <Content Include="Views\MainMenus\Edit.cshtml" />
+    <Content Include="Views\MainMenus\Index.cshtml" />
+    <Content Include="Views\SubMenus\Create.cshtml" />
+    <Content Include="Views\SubMenus\Delete.cshtml" />
+    <Content Include="Views\SubMenus\Details.cshtml" />
+    <Content Include="Views\SubMenus\Edit.cshtml" />
+    <Content Include="Views\SubMenus\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
